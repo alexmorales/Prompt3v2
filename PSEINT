@@ -1,0 +1,33 @@
+Algoritmo ContarPalabraEnTexto
+
+    // Declaración de variables
+    Definir texto, palabraBuscada como Cadena
+    Definir contador, posicionInicio, cantidadPalabras como Entero
+
+    // Solicitar al usuario ingresar el texto
+    Escribir "Ingrese el texto largo:"
+    Leer texto
+
+    // Solicitar al usuario ingresar la palabra que desea contar
+    Escribir "Ingrese la palabra que desea contar:"
+    Leer palabraBuscada
+
+    // Inicializar variables
+    contador <- 0
+    posicionInicio <- 1
+    cantidadPalabras <- 0
+
+    // Recorrer el texto para contar la palabra buscada
+    Mientras posicionInicio <= Longitud(texto) - Longitud(palabraBuscada) + 1 Hacer
+        Si Subcadena(texto, posicionInicio, Longitud(palabraBuscada)) = palabraBuscada Entonces
+            contador <- contador + 1
+            posicionInicio <- posicionInicio + Longitud(palabraBuscada)
+        Sino
+            posicionInicio <- posicionInicio + 1
+        FinSi
+    FinMientras
+
+    // Mostrar el resultado
+    Escribir "La palabra '", palabraBuscada, "' aparece ", contador, " veces en el texto."
+
+FinAlgoritmo
